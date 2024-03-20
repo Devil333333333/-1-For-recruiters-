@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="AG" content="guide" />
+    <title>ArmedGeniuses</title>
+    <link rel="icon" href="img/logo.png">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/icon.css" rel="stylesheet" />
+    <link href="css/button.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body class="light">
+
+    <div class="container">
+        <div class="placeholder">
+            <div class="window">
+                <div class="header">
+                    <div class="header-inner" data-aos="flip-up">
+                        <img src="img/logo.png" alt="Logo" class="site-logo" />
+                        <div class="site-text-box">
+                            <h1 class="site-title">Armed Geniuses</h1>
+                            <h6 class="site-description">Спрощене етичне хакерство</h6>
+                        </div>
+                        <nav class="nav">
+                            <ul class="nav-ul">
+                                <li class="nav-li"><a href="index.html" class="nav-link">Головна сторінка</a></li>
+                                <li class="nav-li"><a href="setup.html" class="nav-link">Почати</a></li>
+                                <li class="nav-li"><a href="about.html" class="nav-link">Про нас</a></li>
+                                <li class="nav-li"><a href="contact.html" class="nav-link">Контакт</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn active spacing" id="myBtn"
+            style="--green-color: var(--btn-background); color: var(--btn-color);">
+            <span class="btn__content">Тема</span>
+            <span class="btn__glitch"></span>
+            <span class="btn__label">1337</span>
+        </button>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Змінити тему</h2>
+                </div>
+                <div class="modal-body">
+                    <br /><br /><a class="theme-btn" id="light" href="#">світло ☀️</a> <br />
+                    <br /><br /><a class="theme-btn" id="dark" href="#">темний ☾</a> <br /><br />
+                </div>
+
+            </div>
+
+        </div>
+
+        <div>
+            <header class="welcome-section">
+                <h2 class="text-center section-title" style="color: var(--header-color)">Welcome to Armed Geniuses</h2>
+                <p class="text-center">Тут ми поговоримо про базове тестування злому та проникнення. Ти можеш
+                    виберіть один із типів хаків нижче.</p>
+            </header>
+            <div class="paging-links" data-aos="zoom-in">
+                <nav>
+                    <ul>
+                        <li class="paging-item"><button class="btn" onclick="window.location.href = 'WPA.html';">
+                                <span class="btn__content">Злом Wi-Fi</span>
+                                <span class="btn__glitch"></span>
+                                <span class="btn__label">1337</span>
+                            </button></li>
+                        <li class="paging-item"><button class="btn" onclick="window.location.href = 'sniff.html';">
+                                <span class="btn__content">Перегляд Wi-Fi</span>
+                                <span class="btn__glitch"></span>
+                                <span class="btn__label">1337</span>
+                            </button></li>
+                        <li class="paging-item"><button class="btn" onclick="window.location.href = 'exploit.html';">
+                                <span class="btn__content">Експлуатація</span>
+                                <span class="btn__glitch"></span>
+                                <span class="btn__label">1337</span>
+                            </button></li>
+                        <li class="paging-item"><button class="btn active"
+                                onclick="window.location.href = 'recon.html';">
+                                <span class="btn__content">Розвідка</span>
+                                <span class="btn__glitch"></span>
+                                <span class="btn__label">1337</span>
+                            </button></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="content" data-aos="fade-right">
+                <h4 class="guide-title ">Використання з інформацією, отриманою від Nmap</h4>
+                <p class="guide-body">
+                    Ми будемо використовувати програму під назвою VSFTPD 2.3.4, яка є вразливістю, знайденою в
+                    metasploitable VM. <br />
+                    Тепер, коли ми знаємо, що вразливість присутня в програмному забезпеченні, ми можемо продовжувати
+                    використовувати її.
+                    Ми будемо використовувати metasploit, щоб використовувати його. Спочатку ми знайдемо експлойт для
+                    вразливість уже написав хтось інший.<br /><br />
+                    Для цього введіть у Google «ім’я програми» та «експлойт», щоб знайти для нього експлойт.
+                    Якщо вам пощастить, ви можете отримати цілий посібник від <a
+                        href="https://www.rapid7.com">Rapid7</a>,
+                    творці Metasploit. У нашому випадку ми вже робимо! Отже, давайте запустимо Metasploit і почнемо
+                    експлуатувати.<br /> <br />
+                    <code class="code">msfconsole</code>
+                </p>
+            </div>
+            <div class="content" data-aos="fade-left">
+                <p class="guide-body">
+                    Тепер ми знайшли інформацію про експлойт <a
+                        href="https://www.rapid7.com/db/modules/exploit/unix/ftp/vsftpd_234_backdoor">тут</a>.
+                    Тепер ми перейдемо до використання модуля експлойту. <br /><br />
+                    <code class="code">використовуйте exploit/unix/ftp/vsftpd_234_backdoor</code>
+                    Тепер ми повинні побачити та встановити параметри експлойту. Тип<br /> <br />
+                    <code class="code">показати параметри</code>
+                    Встановіть параметри для корисного навантаження так само, як ви вчилися раніше. Синтаксис:
+                    <br /><br />
+                    <code class="code">встановіть OPTION VALUE</code>
+                    Зробивши все це, коли все виглядає правильно, ви готові до експлуатації. <br /><br />
+                    <code class="code">експлойт</code>
+                    Тепер ви повинні перейти до цільової системи. Він також має погано налаштоване програмне
+                    забезпечення,
+                    і є анонімний вхід. Тому він також не запитуватиме у вас облікові дані пароля.<br />
+                    Ви також можете побачити більш детальний метод нижче. (джерело зображення: <a
+                        href="https://www.rapid7.com">Rapid7</a>)<br />
+                    <img src="img/vuln_software.jpg" alt="процедура злому" class="img-class history-img" width="70%"
+                        height="60%" />
+                </p>
+            </div>
+        </div>
+    </div>
+    </main>
+
+
+    </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="js/popup.js" type="text/javascript"></script>
+    <script src="js/theme.js" type="text/javascript"></script>
+</body>
+
+</html>
